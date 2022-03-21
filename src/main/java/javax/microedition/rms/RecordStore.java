@@ -132,4 +132,9 @@ public class RecordStore {
 
         return record;
     }
+
+    public int getRecord(int i, byte[] var0, int i1)
+             throws RecordStoreNotOpenException, InvalidRecordIDException, RecordStoreException{
+        return -1;
+    }
 }
