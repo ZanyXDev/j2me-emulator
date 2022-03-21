@@ -11,6 +11,8 @@ import java.io.File;
 import java.io.IOException;
 
 public class Graphics {
+    public final static int SOLID = 0;
+    public final static int DOTTED = 1;
 
     public final static int HCENTER = 1;
     public final static int VCENTER = 2;
@@ -102,6 +104,10 @@ public class Graphics {
     }
 
     public void drawImage(Image image, int x, int y, int anchor) {
+        if (anchor == 0) {
+            anchor = javax.microedition.lcdui.Graphics.TOP | javax.microedition.lcdui.Graphics.LEFT;
+            System.out.println("drawImage, anchor==0. New Anchor:"+ anchor);
+        }
         x = getAnchorX(x, image.getWidth(), anchor);
         y = getAnchorY(y, image.getHeight(), anchor);
         graphics.drawImage(image.image, x, y, null);
