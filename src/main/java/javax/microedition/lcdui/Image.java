@@ -14,8 +14,7 @@ public class Image {
     }
 
     public Graphics getGraphics() {
-        //return image.getGraphics();
-        throw new RuntimeException();
+        return new Graphics( image.getGraphics() );
     }
 
     public int getWidth() {
