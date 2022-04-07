@@ -94,7 +94,7 @@ public class Graphics {
     }
 
     /**
-     *  @note Intersects the current clip with the specified rectangle. The resulting clipping area is the intersection
+     *  Intersects the current clip with the specified rectangle. The resulting clipping area is the intersection
      *  of the current clipping area and the specified rectangle. This method can only be used to make the current clip
      *  smaller. To set the current clip larger, use the \@sa setClip method.
      *  Rendering operations have no effect outside of the clipping area.
@@ -138,11 +138,6 @@ public class Graphics {
         graphics.drawImage(image.image, x, y, null);
     }
 
-    /**
-     * @throws ArrayIndexOutOfBoundsException
-     * @throws NullPointerException
-     * @since MIDP 2.0
-     */
     public void drawRGB(int[] rgbData, int offset, int scanlength, int x, int y, int width, int height, boolean processAlpha) {
         System.out.println("drawRGB()");
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);

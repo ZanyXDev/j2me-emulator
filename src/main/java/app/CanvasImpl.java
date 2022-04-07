@@ -78,6 +78,26 @@ public class CanvasImpl extends JPanel {
                 return javax.microedition.lcdui.Canvas.UP;
             case KeyEvent.VK_DOWN:
                 return javax.microedition.lcdui.Canvas.DOWN;
+            case KeyEvent.VK_0:
+                return javax.microedition.lcdui.Canvas.KEY_NUM0;
+            case KeyEvent.VK_1:
+                return javax.microedition.lcdui.Canvas.KEY_NUM1;
+            case KeyEvent.VK_2:
+                return javax.microedition.lcdui.Canvas.KEY_NUM2;
+            case KeyEvent.VK_3:
+                return javax.microedition.lcdui.Canvas.KEY_NUM3;
+            case KeyEvent.VK_4:
+                return javax.microedition.lcdui.Canvas.KEY_NUM4;
+            case KeyEvent.VK_5:
+                return javax.microedition.lcdui.Canvas.KEY_NUM5;
+            case KeyEvent.VK_6:
+                return javax.microedition.lcdui.Canvas.KEY_NUM6;
+            case KeyEvent.VK_7:
+                return javax.microedition.lcdui.Canvas.KEY_NUM7;
+            case KeyEvent.VK_8:
+                return javax.microedition.lcdui.Canvas.KEY_NUM8;
+            case KeyEvent.VK_9:
+                return javax.microedition.lcdui.Canvas.KEY_NUM9;
             default:
                 System.out.println("unknown keyEvent: " + keyEvent);
                 return 0;
