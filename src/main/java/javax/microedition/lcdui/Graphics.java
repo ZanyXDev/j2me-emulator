@@ -71,6 +71,16 @@ public class Graphics {
         graphics.setColor(new Color(RGB));
     }
 
+    /**
+     * Gets the current color.
+     * @return an integer in form 0x00RRGGBB
+     */
+    public int getColor(){
+        System.out.println("getColor()->"+graphics.getColor().getRGB());
+        return graphics.getColor().getRGB();
+    }
+
+
     public Font getFont() {
         return new Font(graphics.getFont());
     }
@@ -82,6 +92,21 @@ public class Graphics {
     public void setClip(int x, int y, int width, int height) {
         graphics.setClip(x, y, width, height);
     }
+
+    /**
+     *  @note Intersects the current clip with the specified rectangle. The resulting clipping area is the intersection
+     *  of the current clipping area and the specified rectangle. This method can only be used to make the current clip
+     *  smaller. To set the current clip larger, use the \@sa setClip method.
+     *  Rendering operations have no effect outside of the clipping area.
+     * @param x the x coordinate of the rectangle to intersect the clip with
+     * @param y the y coordinate of the rectangle to intersect the clip with
+     * @param width the width of the rectangle to intersect the clip with
+     * @param height the height of the rectangle to intersect the clip with
+     */
+    public void clipRect(int x, int y, int width, int height){
+        graphics.clipRect(x,y,width,height);
+    }
+
 
     public void drawChar(char c, int x, int y, int anchor) {
         drawString("" + c, x, y, anchor);
