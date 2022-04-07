@@ -22,6 +22,9 @@ public class Graphics {
     public final static int BOTTOM = 32;
     public final static int BASELINE = 64;
 
+    int translateX = 0;
+    int translateY = 0;
+
     private final java.awt.Graphics graphics;
     private final FontRenderContext frc;
 
@@ -245,5 +248,17 @@ public class Graphics {
 
     public void fillRoundRect(int x, int y, int width, int height, int arcWidth, int arcHeight){
         graphics.fillRoundRect(x,y,width,height,arcWidth,arcHeight);
+    }
+    public int getTranslateX() {
+        return translateX;
+    }
+
+    public int getTranslateY() {
+        return translateY;
+    }
+
+    public void translate(int x, int y) {
+        translateX += x;
+        translateY += y;
     }
 }
