@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.awt.Graphics2D;
 
 public class Image {
     public final java.awt.Image image;
@@ -54,5 +55,22 @@ public class Image {
             System.exit(0);
             return null;
         }
+    }
+
+    public void getRGB(int []argb, int offset, int scanlenght, int x, int y, int width, int height) {
+        BufferedImage bimage;
+        bimage = new BufferedImage(image.getWidth(null), image.getHeight(null), BufferedImage.TYPE_INT_ARGB);
+        // Draw the image on to the buffered image
+        Graphics2D bGr = bimage.createGraphics();
+        bGr.drawImage(image, 0, 0, null);
+        bGr.dispose();
+        bimage.getRGB(x,y,width,height,argb,0,0);
+    }
+
+    public static Image createRGBImage(int[] rgbData, int width, int height, boolean processAlpha) {
+        int imageType = (processAlpha) ? BufferedImage.TYPE_INT_ARGB : BufferedImage.TYPE_INT_RGB;
+        BufferedImage bimage = new BufferedImage(width, height, imageType);
+        bimage.setRGB(0,0,width,height,rgbData,0,0);
+        return new Image(bimage);
     }
 }

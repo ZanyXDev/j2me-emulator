@@ -261,4 +261,35 @@ public class Graphics {
         translateX += x;
         translateY += y;
     }
+    public int getClipHeight() {
+        implementationError();
+
+        return -1;
+    }
+
+    public int getClipWidth() {
+        implementationError();
+
+        return -1;
+    }
+
+    public int getClipX() {
+        implementationError();
+
+        return -1;
+    }
+
+    public int getClipY() {
+        implementationError();
+
+        return -1;
+    }
+
+    private void implementationError() {
+        try {
+            throw new RuntimeException("Must be implemented ");
+        } catch (RuntimeException ex) {
+            ex.printStackTrace();
+        }
+    }
 }

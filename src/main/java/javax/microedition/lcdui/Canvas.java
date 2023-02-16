@@ -146,4 +146,9 @@ public abstract class Canvas extends Displayable {
      * @since MIDP 2.0
      */
     public void setFullScreenMode(boolean mode) {}
+
+    public boolean isDoubleBuffered()
+    {
+        return true;
+    }
 }
