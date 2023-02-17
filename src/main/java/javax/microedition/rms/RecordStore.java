@@ -118,9 +118,9 @@ public class RecordStore {
         System.out.println("RecordStore." + s);
     }
 
-    public int getNumRecords()  {
+    public int getNumRecords() {
         log("getNumRecords()");
-            return 0;
+        return 0;
     }
 
     public byte[] getRecord(int i) {
@@ -128,13 +128,20 @@ public class RecordStore {
         log("getRecord()");
         String[] recFiles = listRecordStores();
         assert (i < 0);
-        assert ( i > recFiles.length);
+        assert (i > recFiles.length);
 
         return record;
     }
 
+    public int getNextRecordID()
+            throws RecordStoreNotOpenException, RecordStoreException{
+        log("getNextRecordID()");
+        String[] recFiles = listRecordStores();
+        return recFiles.length + 1;
+    }
+
     public int getRecord(int i, byte[] var0, int i1)
-             throws RecordStoreNotOpenException, InvalidRecordIDException, RecordStoreException{
+            throws RecordStoreNotOpenException, InvalidRecordIDException, RecordStoreException {
         return -1;
     }
 }
