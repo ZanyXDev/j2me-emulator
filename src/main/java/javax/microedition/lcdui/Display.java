@@ -6,15 +6,17 @@ import javax.microedition.midlet.MIDlet;
 
 public class Display {
     int numAlphaLevels;
-
+    private Displayable currentDisplayable;
     private Display() {
         numAlphaLevels = 2;
     }
 
     public void setCurrent(Displayable displayable) {
+        currentDisplayable = displayable;
         if (displayable instanceof Canvas) {
             Canvas canvas = (Canvas) displayable;
             onPrepareCanvas.initCanvas(canvas.impl);
+
             return;
         }
         if (displayable instanceof Alert) {
@@ -24,7 +26,9 @@ public class Display {
         }
         assert false;
     }
-
+    public Displayable getCurrent(){
+       return  currentDisplayable;
+    }
     public static Display getDisplay(MIDlet midlet) {
         return new Display();
     }
