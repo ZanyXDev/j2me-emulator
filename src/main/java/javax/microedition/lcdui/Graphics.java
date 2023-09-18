@@ -24,6 +24,7 @@ public class Graphics {
 
     int translateX = 0;
     int translateY = 0;
+private int drawStyle = SOLID;
 
     private final java.awt.Graphics graphics;
     private final FontRenderContext frc;
@@ -290,6 +291,20 @@ public class Graphics {
             throw new RuntimeException("Must be implemented ");
         } catch (RuntimeException ex) {
             ex.printStackTrace();
+        }
+    }
+
+    /**
+     *  Sets the stroke style used for drawing lines, arcs, rectangles, and rounded rectangles.
+     *  This does not affect fill, text, and image operations.
+     *  Parameters:
+     * @param style
+     */
+    public void setStrokeStyle(int style){
+        if ( (style == SOLID) || (style == DOTTED)){
+            drawStyle = style;
+        }else {
+            drawStyle = SOLID;
         }
     }
 }

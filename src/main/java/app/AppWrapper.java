@@ -30,7 +30,7 @@ public class AppWrapper {
 
     private static MIDlet createMIDlet() {
         try {
-            Class<?> cls = Class.forName("ru.newedge.general.MIDlet");
+            Class<?> cls = Class.forName("handyLuder");
             Constructor<?> constructor = cls.getConstructor();
             return (MIDlet) constructor.newInstance();
         } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
